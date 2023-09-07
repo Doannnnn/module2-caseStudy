@@ -1,0 +1,34 @@
+package org.example.utils;
+
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
+import java.util.regex.Pattern;
+
+public class ValiDateUtils {
+    public static final String NAME_REGEX = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
+    public static final String PASSWORD_REGEX = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$";
+    public static final String PHONE_REGEX = "^[0][1-9][0-9]{8,9}$";
+    public static final String USERNAME_REGEX = "^[A-Za-z][A-Za-z0-9_]{7,19}$";
+    public static final String ADDRESS_REGEX = "^[0-9]{1,5}[ ][a-zA-Z]+(([',. -][a-zA-Z])?[a-zA-Z]*)*$";
+    public static boolean isPasswordValid(String password) {
+        return Pattern.matches(PASSWORD_REGEX, password);
+    }
+    public static boolean isNameValid(String name) {
+        return Pattern.matches(NAME_REGEX, name);
+    }
+    public static boolean isPhoneValid(String phone) {
+        return Pattern.matches(PHONE_REGEX, phone);
+    }
+    public static boolean isUsernameValid(String username) {
+        return Pattern.matches(USERNAME_REGEX, username);
+    }
+    public static boolean isAddressValid(String address) {
+        return Pattern.matches(ADDRESS_REGEX, address);
+    }
+}

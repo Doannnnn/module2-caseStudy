@@ -1,0 +1,6 @@
+USER:
+ID, NAME, PASSWORD,AGE, DOB,GENDER
+
+
+SCORE
+ID, idTournaments, idTeam,idSchedule,idPlayer,quantity
